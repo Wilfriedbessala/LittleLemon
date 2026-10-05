@@ -11,3 +11,6 @@ class MenuList(models.Model):
     price = models.DecimalField(decimal_places=2, max_digits=10)
     inventory = models.IntegerField()
 
+    def get_item(self):
+        return f"{self.title} : ${self.price} (Inventory: {self.inventory})"
+
