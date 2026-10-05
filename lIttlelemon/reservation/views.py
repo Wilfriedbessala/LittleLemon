@@ -3,14 +3,14 @@ from django.http import HttpResponse
 from rest_framework import generics
 # Create your views here.
 from rest_framework.decorators import api_view
-from .models import MenuItem
-from .serializers import MenuItemSerializer
+from .models import BookingTable, MenuList
+from .serializers import MenuListSerializer, BookingTableSerializer, UserSerializer
 
 # Create your views here. 
 class MenuItemsView(generics.ListCreateAPIView):
-    queryset = MenuItem.objects.all()
-    serializer_class = MenuItemSerializer
+    queryset = MenuList.objects.all()
+    serializer_class = MenuListSerializer
 
 class SingleMenuItemView(generics.RetrieveUpdateAPIView, generics.DestroyAPIView):
-    queryset = MenuItem.objects.all()
-    serializer_class = MenuItemSerializer
+    queryset = BookingTable.objects.all()
+    serializer_class = BookingTableSerializer
